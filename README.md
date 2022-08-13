@@ -87,14 +87,14 @@ server.listen(3002);
 
 1. `createHttpServer` starts a server (via `http.createServer`)
 2. On each request:  
-   2.1. Trigger `fork` and creates a new `scope`
-   2.2. Store `req.method` in `apiControls.$method`
-   2.3. Create `history` instance and pushes `req.url` to it
-   2.4. Trigger `router.setHistory` with a passed `scope`
-   2.5. Router opens matched route
-   2.6. Check `apiControls.$method` and open matching sub-route (created by `chainRoute`)
-   2.7. Trigger effect and wait until it's finished
-   2.8. `effect.doneData` writes its response to `apiControls.$response`
+   2.1. Trigger `fork` and creates a new `scope`  
+   2.2. Store `req.method` in `apiControls.$method`  
+   2.3. Create `history` instance and pushes `req.url` to it  
+   2.4. Trigger `router.setHistory` with a passed `scope`  
+   2.5. Router opens matched route  
+   2.6. Check `apiControls.$method` and open matching sub-route (created by `chainRoute`)  
+   2.7. Trigger effect and wait until it's finished  
+   2.8. `effect.doneData` writes its response to `apiControls.$response`  
    2.9. Trigger `res.send` with `apiControls.$response` data
 
 ## TODO:
